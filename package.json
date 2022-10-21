@@ -1,7 +1,7 @@
 {
-  "name": "d3-color",
-  "version": "1.4.1",
-  "description": "Color spaces! RGB, HSL, Cubehelix, Lab and HCL (Lch).",
+  "name": "d3-color-1-fix",
+  "version": "1.4.2",
+  "description": "A fork of d3-color 1.x with the 3.1.0 fix applied https://github.com/d3/d3-color/issues/109#issuecomment-1271705509",
   "keywords": [
     "d3",
     "d3-module",
@@ -19,13 +19,13 @@
     "name": "Mike Bostock",
     "url": "http://bost.ocks.org/mike"
   },
-  "main": "dist/d3-color.js",
-  "unpkg": "dist/d3-color.min.js",
-  "jsdelivr": "dist/d3-color.min.js",
+  "main": "dist/d3-color-1-fix.js",
+  "unpkg": "dist/d3-color-1-fix.min.js",
+  "jsdelivr": "dist/d3-color-1-fix.min.js",
   "module": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/d3/d3-color.git"
+    "url": "https://github.com/mpopv/d3-color-1-fix.git"
   },
   "files": [
     "dist/**/*.js",
@@ -35,7 +35,7 @@
     "pretest": "rollup -c",
     "test": "tape 'test/**/*-test.js' && eslint src test",
     "prepublishOnly": "rm -rf dist && yarn test",
-    "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd - && zip -j dist/${npm_package_name}.zip -- LICENSE README.md dist/${npm_package_name}.js dist/${npm_package_name}.min.js"
+    "postpublish": "git push && git push --tags"
   },
   "sideEffects": false,
   "devDependencies": {
